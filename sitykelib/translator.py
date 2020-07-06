@@ -1,4 +1,3 @@
-import os
 import comtypes.client
 
 def init_powerpoint():
@@ -10,8 +9,3 @@ def ppt2pdf(powerpoint, inputFileName, outputFileName):
         outputFileName = outputFileName + ".pdf"
     ppt = powerpoint.Presentations.Open(inputFileName)
     ppt.ExportAsFixedFormat(outputFileName, 2)
-
-def search_ppt(powerpoint, folder):
-    files = os.listdir()
-    pptfiles = [f for f in files if f.endswith((".ppt", ".pptx"))]
-    return pptfiles
