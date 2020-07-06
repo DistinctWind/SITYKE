@@ -9,6 +9,8 @@ def list_disk():
     return disks
 
 def judge_kindle(disk):
+    #貌似所有的kindle都会有这个文件夹呢
+    #话说连这个都没有的话那要怎么拷贝文件呢?
     allDir = os.listdir(disk)
     judgement = "documents"
     return judgement in allDir
