@@ -7,16 +7,34 @@ def main():
     outputFiles = []
 
     pptfiles = search_ppt(cwd)
-    powerpoint = init_powerpoint()
-    for pptfile in pptfiles:
-        fileName = perfix(pptfile)
-        inputFileName = pptfile
-        outputFileName = fileName+".pdf"
-        inputFilePath = cwd+'\\'+inputFileName
-        outputFilePath = cwd+'\\'+outputFileName
-        outputFiles.append(outputFilePath)
-        ppt2pdf(powerpoint, inputFilePath, outputFilePath)
-    os.system("taskkill /im POWERPNT.EXE /f")
+    if pptfiles!=[]:
+        powerpoint = init_powerpoint()
+        for pptfile in pptfiles:
+            fileName = perfix(pptfile)
+            inputFileName = pptfile
+            outputFileName = fileName+".pdf"
+            inputFilePath = cwd+'\\'+inputFileName
+            outputFilePath = cwd+'\\'+outputFileName
+            outputFiles.append(outputFilePath)
+            ppt2pdf(powerpoint, inputFilePath, outputFilePath)
+        os.system("taskkill /im POWERPNT.EXE /f")
+
+    docfiles = search_doc(cwd)
+    if docfiles!=[]:
+        word = init_word()
+        for docfile in docfiles:
+            fileName = perfix(docfile)
+            inputFileName = docfile
+            outputFileName = fileName+".pdf"
+            inputFilePath = cwd+'\\'+inputFileName
+            outputFilePath = cwd+'\\'+outputFileName
+            outputFiles.append(outputFilePath)
+            doc2pdf(word, inputFilePath, outputFilePath)
+        os.system("taskkill /im WINWORD.EXE /f")
+
+    if outputFiles==[]:
+        print("请把需要转化的文件放到该目录下")
+        exit()
 
     kindles = list_kindle()
     if len(kindles)==1:

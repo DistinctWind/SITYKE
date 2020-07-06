@@ -3,6 +3,8 @@ build
 dist
 
 *.spec
+*.doc
+*.docx
 *.ppt
 *.pptx
 *.pdf
