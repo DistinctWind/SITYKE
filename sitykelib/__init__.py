@@ -48,3 +48,5 @@ def main():
         print("没有检测到kindle，复制取消")
     else:
         print("请自行复制或退出其他kindle再运行此程序")
+    
+    os.system('pause')
