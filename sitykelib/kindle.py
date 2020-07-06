@@ -14,3 +14,11 @@ def judge_kindle(disk):
     allDir = os.listdir(disk)
     judgement = "documents"
     return judgement in allDir
+
+def list_kindle():
+    kindles = []
+    disks = list_disk()
+    for disk in disks:
+        if judge_kindle(disk):
+            kindles.append(disk)
+    return kindles
