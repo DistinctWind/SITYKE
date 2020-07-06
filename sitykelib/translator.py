@@ -9,3 +9,4 @@ def ppt2pdf(powerpoint, inputFileName, outputFileName):
         outputFileName = outputFileName + ".pdf"
     ppt = powerpoint.Presentations.Open(inputFileName)
     ppt.ExportAsFixedFormat(outputFileName, 2)
+    ppt.Close()
