@@ -28,4 +28,4 @@ def send_to_kindle(files, kindle):
     destination = kindle+"documents\\"
     assert(os.path.isdir(destination))
     for f in files:
-        os.system("copy"+' '+f+' '+destination)
+        os.system("copy"+' "'+f+'" '+destination)
