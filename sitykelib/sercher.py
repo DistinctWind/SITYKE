@@ -7,7 +7,6 @@ def suffix(fileName):
     return fileName[fileName.rfind('.'):]
 
 def search_ppt(folder):
-    files = os.listdir()
+    files = os.listdir(folder)
     pptfiles = [f for f in files if f.endswith((".ppt", ".pptx"))]
     return pptfiles
-
