@@ -7,10 +7,12 @@ def main():
     allFiles = []
     pptfiles = search_ppt(cwd)
     powerpoint = init_powerpoint()
+
     for pptfile in pptfiles:
-        fullpath = os.path.join(cwd, pptfile)
-        allFiles.append(fullpath)
-        ppt2pdf(powerpoint, fullpath, fullpath)
+        fileName = perfix(pptfile)
+        allFiles.append(fileName+".pdf")
+        ppt2pdf(powerpoint, pptfile, fileName+".pdf")
+
     kindles = list_kindle()
     if len(kindles)==1:
         send_to_kindle(allFiles, kindles[0])
