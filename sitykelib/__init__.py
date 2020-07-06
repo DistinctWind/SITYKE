@@ -3,6 +3,10 @@ import os
 
 cwd = os.getcwd()
 
+def delete_output_files(outputFiles):
+    for outputFile in outputFiles:
+        os.system("del "+outputFile)
+
 def main():
     outputFiles = []
 
@@ -39,6 +43,7 @@ def main():
     kindles = list_kindle()
     if len(kindles)==1:
         send_to_kindle(outputFiles, kindles[0])
+        delete_output_files(outputFiles)
     elif len(kindles)==0:
         print("没有检测到kindle，复制取消")
     else:
