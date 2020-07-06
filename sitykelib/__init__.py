@@ -11,5 +11,7 @@ def main():
         fullpath = os.path.join(cwd, pptfile)
         allFiles.append(fullpath)
         ppt2pdf(powerpoint, fullpath, fullpath)
-    
+    kindles = list_kindle()
+    if len(kindles)==1:
+        send_to_kindle(allFiles, kindles[0])
     

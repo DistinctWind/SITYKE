@@ -4,8 +4,9 @@ import string
 def list_disk():
     disks = []
     for possibleDriveLetter in string.ascii_uppercase:
-        if os.path.isdir(possibleDriveLetter+':\\'):
-            disks.append(possibleDriveLetter)
+        possibleDrivePath = possibleDriveLetter+":\\"
+        if os.path.isdir(possibleDrivePath):
+            disks.append(possibleDrivePath)
     return disks
 
 def judge_kindle(disk):
@@ -22,3 +23,9 @@ def list_kindle():
         if judge_kindle(disk):
             kindles.append(disk)
     return kindles
+
+def send_to_kindle(files, kindle):
+    destination = kindle+"documents\\"
+    assert(os.path.isdir(destination))
+    for f in files:
+        os.system("copy"+' '+f+' '+destination)
