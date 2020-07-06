@@ -19,4 +19,10 @@ Send It To Your Kindle Efficiently
 
 用法：
 
-将需要转换的文件放到sityke.py文件夹下
+将需要转换的文件放到sityke文件夹下，在cmd中输入
+
+```
+python sityke.py
+```
+
+支持```.ppt``` ```.pptx``` ```.doc``` ```.docx```转换成```.pdf```并自动导入kindle
