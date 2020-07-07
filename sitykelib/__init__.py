@@ -5,7 +5,7 @@ cwd = os.getcwd()
 
 def delete_output_files(outputFiles):
     for outputFile in outputFiles:
-        os.system("del "+outputFile)
+        os.system("del "+'"'+outputFile+'"')
 
 def main():
     outputFiles = []
