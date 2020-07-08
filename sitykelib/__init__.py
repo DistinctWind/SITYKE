@@ -21,7 +21,7 @@ def main():
             outputFilePath = cwd+'\\'+outputFileName
             outputFiles.append(outputFilePath)
             ppt2pdf(powerpoint, inputFilePath, outputFilePath)
-        os.system("taskkill /im POWERPNT.EXE /f")
+        os.system("taskkill /im POWERPNT.EXE")
 
     docfiles = search_doc(cwd)
     if docfiles!=[]:
@@ -34,7 +34,7 @@ def main():
             outputFilePath = cwd+'\\'+outputFileName
             outputFiles.append(outputFilePath)
             doc2pdf(word, inputFilePath, outputFilePath)
-        os.system("taskkill /im WINWORD.EXE /f")
+        os.system("taskkill /im WINWORD.EXE")
 
     if outputFiles==[]:
         print("请把需要转化的文件放到该目录下")
