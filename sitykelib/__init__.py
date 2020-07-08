@@ -12,6 +12,7 @@ def main():
 
     pptfiles = search_ppt(cwd)
     if pptfiles!=[]:
+        os.system("taskkill /im POWERPNT.EXE /f")
         powerpoint = init_powerpoint()
         for pptfile in pptfiles:
             fileName = perfix(pptfile)
@@ -25,6 +26,7 @@ def main():
 
     docfiles = search_doc(cwd)
     if docfiles!=[]:
+        os.system("taskkill /im WINWORD.EXE /f")
         word = init_word()
         for docfile in docfiles:
             fileName = perfix(docfile)
