@@ -11,6 +11,7 @@ def main():
     outputFiles = []
 
     pptfiles = search_ppt(cwd)
+    show_ppt_list(pptfiles)
     if pptfiles!=[]:
         powerpoint = init_powerpoint()
         for pptfile in tqdm(pptfiles):
@@ -24,6 +25,7 @@ def main():
         os.system("taskkill /im POWERPNT.EXE")
 
     docfiles = search_doc(cwd)
+    show_word_list(docfiles)
     if docfiles!=[]:
         word = init_word()
         for docfile in tqdm(docfiles):
