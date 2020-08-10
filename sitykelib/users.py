@@ -19,5 +19,4 @@ def show_kindle_list(kindles):
         print("没有找到kindle，请自行复制")
     else:
         print("文件将复制到kindle:")
-        for kindle in kindles:
-            print(kindle)
+        print(kindles)
