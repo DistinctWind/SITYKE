@@ -14,7 +14,7 @@ def main():
     show_ppt_list(pptfiles)
     if pptfiles!=[]:
         powerpoint = init_powerpoint()
-        for pptfile in tqdm(pptfiles):
+        for pptfile in tqdm(pptfiles, ncols=50):
             fileName = perfix(pptfile)
             inputFileName = pptfile
             outputFileName = fileName+".pdf"
@@ -28,7 +28,7 @@ def main():
     show_word_list(docfiles)
     if docfiles!=[]:
         word = init_word()
-        for docfile in tqdm(docfiles):
+        for docfile in tqdm(docfiles, ncols=50):
             fileName = perfix(docfile)
             inputFileName = docfile
             outputFileName = fileName+".pdf"
@@ -47,3 +47,5 @@ def main():
     for kindle in kindles:
         send_to_kindle(kindle)
     delete_output_files(outputFiles)
+
+    os.system("pause")
