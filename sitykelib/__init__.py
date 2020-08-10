@@ -13,7 +13,7 @@ def main():
     pptfiles = search_ppt(cwd)
     if pptfiles!=[]:
         powerpoint = init_powerpoint()
-        for pptfile in pptfiles:
+        for pptfile in tqdm(pptfiles):
             fileName = perfix(pptfile)
             inputFileName = pptfile
             outputFileName = fileName+".pdf"
@@ -26,7 +26,7 @@ def main():
     docfiles = search_doc(cwd)
     if docfiles!=[]:
         word = init_word()
-        for docfile in docfiles:
+        for docfile in tqdm(docfiles):
             fileName = perfix(docfile)
             inputFileName = docfile
             outputFileName = fileName+".pdf"
