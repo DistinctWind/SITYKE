@@ -45,5 +45,5 @@ def main():
     kindles = list_kindle()
     show_kindle_list(kindles)
     for kindle in kindles:
-        send_to_kindle(outputFiles, kindle)
+        send_to_kindle(kindle)
     delete_output_files(outputFiles)

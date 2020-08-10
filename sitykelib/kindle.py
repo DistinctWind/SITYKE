@@ -27,8 +27,8 @@ def list_kindle():
             kindles.append(disk)
     return kindles
 
-def send_to_kindle(files, kindle):
+def send_to_kindle(kindle):
+    print("复制中……")
     destination = kindle+"documents\\"
     assert(os.path.isdir(destination))
-    for f in files:
-        os.system("copy"+' "'+f+'" '+destination)
+    os.system("copy"+' "'+"*.pdf"+'" '+destination+"/Y")
