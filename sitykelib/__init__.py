@@ -43,10 +43,7 @@ def main():
         exit()
 
     kindles = list_kindle()
-    if len(kindles)==1:
-        send_to_kindle(outputFiles, kindles[0])
-        delete_output_files(outputFiles)
-    elif len(kindles)==0:
-        print("没有检测到kindle，复制取消")
-    else:
-        print("请自行复制或退出其他kindle再运行此程序")
+    show_kindle_list(kindles)
+    for kindle in kindles:
+        send_to_kindle(outputFiles, kindle)
+    delete_output_files(outputFiles)
