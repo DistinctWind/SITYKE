@@ -38,14 +38,12 @@ def main():
             doc2pdf(word, inputFilePath, outputFilePath)
         os.system("taskkill /im WINWORD.EXE")
 
-    if outputFiles==[]:
-        print("请把需要转化的文件放到该目录下")
-        exit()
-
+    if len(outputFiles)==0:
+        print("复制.pdf文件")
     kindles = list_kindle()
     show_kindle_list(kindles)
     for kindle in kindles:
         send_to_kindle(kindle)
-    delete_output_files(outputFiles)
+    #delete_output_files(outputFiles)
 
     os.system("pause")

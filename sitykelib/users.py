@@ -15,8 +15,7 @@ def show_word_list(word_list):
         print(word_file_name)
 
 def show_kindle_list(kindles):
-    if len(kindles)==0:
-        print("没有找到kindle，请自行复制")
-    else:
-        print("文件将复制到kindle:")
-        print(kindles)
+    print("文件将复制到kindle: ", end='')
+    for kindle in kindles:
+        print(kindle.rstrip(":\\"), end='|')
+    print('\n')
