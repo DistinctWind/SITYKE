@@ -1,7 +1,9 @@
+from sitykelib.argparser import start_argparse
 from sitykelib.imports import *
 import os
 
 cwd = os.getcwd()
+start_argparse()
 
 def delete_output_files(outputFiles):
     for outputFile in outputFiles:
