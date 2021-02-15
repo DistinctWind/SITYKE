@@ -24,7 +24,6 @@ def main():
             outputFilePath = cwd+'\\'+outputFileName
             outputFiles.append(outputFilePath)
             ppt2pdf(powerpoint, inputFilePath, outputFilePath)
-        os.system("taskkill /im POWERPNT.EXE")
 
     docfiles = search_doc(cwd)
     show_word_list(docfiles)
@@ -38,7 +37,6 @@ def main():
             outputFilePath = cwd+'\\'+outputFileName
             outputFiles.append(outputFilePath)
             doc2pdf(word, inputFilePath, outputFilePath)
-        os.system("taskkill /im WINWORD.EXE")
 
     if len(outputFiles)==0:
         print("复制.pdf文件")

@@ -19,7 +19,7 @@ def ppt2pdf(powerpoint, inputFileName, outputFileName):
 def doc2pdf(word, inputFileName, outputFileName):
     if not outputFileName.endswith(".pdf"):
         outputFileName = outputFileName + ".pdf"
-    doc = word.Documents.Open(inputFileName)
+    doc = word.Documents.Open(inputFileName, Visible=False)
     doc.ExportAsFixedFormat(outputFileName, 17)
     # 传说，17是wdExportFormatPDF的值
     # 那就这样用吧！
