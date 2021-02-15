@@ -16,8 +16,10 @@ def main():
             fileName = perfix(pptfile)
             inputFileName = pptfile
             outputFileName = fileName+".pdf"
-            inputFilePath = cwd+'\\'+inputFileName
-            outputFilePath = cwd+'\\'+outputFileName
+            #inputFilePath = cwd+'\\'+inputFileName
+            #outputFilePath = cwd+'\\'+outputFileName
+            inputFilePath = os.sep.join([cwd, inputFileName])
+            outputFilePath = os.sep.join([cwd, outputFileName])
             outputFiles.append(outputFilePath)
             ppt2pdf(powerpoint, inputFilePath, outputFilePath)
 
@@ -29,8 +31,10 @@ def main():
             fileName = perfix(docfile)
             inputFileName = docfile
             outputFileName = fileName+".pdf"
-            inputFilePath = cwd+'\\'+inputFileName
-            outputFilePath = cwd+'\\'+outputFileName
+            #inputFilePath = cwd+'\\'+inputFileName
+            #outputFilePath = cwd+'\\'+outputFileName
+            inputFilePath = os.sep.join([cwd, inputFileName])
+            outputFilePath = os.sep.join([cwd, outputFileName])
             outputFiles.append(outputFilePath)
             doc2pdf(word, inputFilePath, outputFilePath)
 

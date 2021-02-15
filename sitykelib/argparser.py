@@ -7,7 +7,9 @@ def start_argparse():
     parser.add_argument('--hello', action='store_true')
 
     parser.add_argument('-d', '--delete_output_files', action='store_true',
-    help='Delete all the output files after the program ends')
+    help = 'Delete all the output files after the program ends')
+    parser.add_argument('-c', '--cover_generated_files', action='store_true',
+    help = 'Cover all generated outputfiles')
 
     args = parser.parse_args()
 
