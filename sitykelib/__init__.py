@@ -5,10 +5,6 @@ import os
 cwd = os.getcwd()
 args = start_argparse()
 
-def delete_output_files(outputFiles):
-    for outputFile in outputFiles:
-        os.system("del "+'"'+outputFile+'"')
-
 def main():
     outputFiles = []
 
@@ -44,6 +40,8 @@ def main():
     show_kindle_list(kindles)
     for kindle in kindles:
         send_to_kindle(kindle)
-    #delete_output_files(outputFiles)
+    
+    if args.delete_output_files:
+        delete_output_files(outputFiles)
 
     os.system("pause")

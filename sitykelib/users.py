@@ -1,3 +1,5 @@
+import os
+
 def show_ppt_list(ppt_list):
     if len(ppt_list)==0:
         print("没有找到演示文稿")
@@ -19,3 +21,7 @@ def show_kindle_list(kindles):
     for kindle in kindles:
         print(kindle.rstrip(":\\"), end='|')
     print('\n')
+
+def delete_output_files(outputFiles):
+    for outputFile in outputFiles:
+        os.system("del "+'"'+outputFile+'"')
