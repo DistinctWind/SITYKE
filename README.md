@@ -3,7 +3,7 @@ Send It To Your Kindle Efficiently
 
 ---
 
-#### 用法：
+## 用法：
 
 将需要转换的文件放到sityke文件夹下，在cmd中输入
 
@@ -14,7 +14,7 @@ python sityke.py
 支持```.ppt``` ```.pptx``` ```.doc``` ```.docx```转换成```.pdf```并自动导入kindle
 
 ---
-#### 开发历程小记
+## 开发历程小记
 
 开发这个软件的初衷起源于一节地理课后。
 
@@ -28,7 +28,7 @@ python sityke.py
 
 （后来考虑到可能还有Word版本的资料就也加了**Word文档**转换为```.pdf```的功能）
 
-##### update on 2021.2.15
+### update on 2021.2.15
 
 不知不觉，sityke已经陪伴了我一年的时光。
 
