@@ -3,7 +3,7 @@ from sitykelib.imports import *
 import os
 
 cwd = os.getcwd()
-start_argparse()
+args = start_argparse()
 
 def delete_output_files(outputFiles):
     for outputFile in outputFiles:
