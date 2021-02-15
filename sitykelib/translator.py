@@ -11,7 +11,8 @@ def init_word():
 def ppt2pdf(powerpoint, inputFileName, outputFileName):
     if not outputFileName.endswith(".pdf"):
         outputFileName = outputFileName + ".pdf"
-    ppt = powerpoint.Presentations.Open(inputFileName)
+    ppt = powerpoint.Presentations.Open(inputFileName, ReadOnly=0, WithWindow=0)
+    # 传说，0是MsoTriState中msofalse的值
     ppt.ExportAsFixedFormat(outputFileName, 2, PrintRange=None)
     ppt.Close()
 
