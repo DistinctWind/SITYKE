@@ -36,8 +36,6 @@ def main():
             outputFiles.append(outputFilePath)
             doc2pdf(word, inputFilePath, outputFilePath)
 
-    if len(outputFiles)==0:
-        print("复制.pdf文件")
     kindles = list_kindle()
     show_kindle_list(kindles)
     for kindle in kindles:
