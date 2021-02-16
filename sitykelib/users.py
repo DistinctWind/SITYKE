@@ -22,6 +22,6 @@ def show_kindle_list(kindles):
         print(kindle.rstrip(":\\"), end='|')
     print('\n')
 
-def delete_output_files(outputFiles):
+def delete_files(outputFiles):
     for outputFile in outputFiles:
         os.system("del "+'"'+outputFile+'"')

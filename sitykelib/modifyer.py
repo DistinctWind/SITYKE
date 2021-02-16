@@ -10,7 +10,7 @@ def cut_ppt(pptfiles):
     for pptfile in pptfiles:
         pdfname = get_pdf_name(pptfile)
         os.system('k2pdfopt'+arg+'"'+pdfname+'"')
-        new_pptfiles.append('[Cut]'+pptfile)
+        new_pptfiles.append('[Cut]'+pdfname)
     return new_pptfiles
 
 def reform_doc(docfiles):
@@ -19,11 +19,14 @@ def reform_doc(docfiles):
     for docfile in docfiles:
         pdfname = get_pdf_name(docfile)
         os.system('k2pdfopt'+arg+'"'+pdfname+'"')
-        new_docfiles.append('[Reformed]'+docfile)
+        new_docfiles.append('[Reformed]'+pdfname)
     return new_docfiles
 
 def dark_mode(pdffiles):
+    new_pdffiles = list()
     arg = ' -fc- -odpi 300 -mode copy -neg -o [Dark]%s '
     for file in pdffiles:
         pdfname = get_pdf_name(file)
         os.system('k2pdfopt'+arg+'"'+pdfname+'"')
+        new_pdffiles.append('[Dark]'+pdfname)
+    return new_pdffiles

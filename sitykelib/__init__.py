@@ -6,6 +6,7 @@ args = start_argparse()
 
 def main():
     outputFiles = []
+    modifiedFiles = []
 
     pptfiles = search_ppt_with_args(cwd, args)
     if pptfiles!=[]:
@@ -38,11 +39,11 @@ def main():
     if args.modify_pdf:
         assert(os.path.isfile('k2pdfopt.exe'))
         if args.cut_ppt:
-            pptfiles = cut_ppt(pptfiles)
+            modifiedFiles.extend(cut_ppt(pptfiles))
         if args.reform_doc:
-            docfiles = reform_doc(docfiles)
+            modifiedFiles.extend(reform_doc(docfiles))
         if args.dark_mode:
-            dark_mode(pptfiles+docfiles)
+            modifiedFiles.extend(dark_mode(pptfiles+docfiles))
 
     kindles = list_kindle()
     show_kindle_list(kindles)
@@ -50,6 +51,8 @@ def main():
         send_to_kindle(kindle)
     
     if args.delete_output_files:
-        delete_output_files(outputFiles)
+        delete_files(outputFiles)
+    if args.delete_modified_files:
+        delete_files(modifiedFiles)
 
     os.system("pause")
