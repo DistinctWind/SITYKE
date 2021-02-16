@@ -1,4 +1,3 @@
-from sitykelib.argparser import start_argparse
 from sitykelib.imports import *
 import os
 
@@ -35,6 +34,11 @@ def main():
             outputFilePath = os.sep.join([cwd, outputFileName])
             outputFiles.append(outputFilePath)
             doc2pdf(word, inputFilePath, outputFilePath)
+
+    if args.modify_pdf:
+        assert(os.path.isfile('k2pdfopt.exe'))
+        if args.cut_ppt:
+            pptfiles = cut_ppt(pptfiles)
 
     kindles = list_kindle()
     show_kindle_list(kindles)
