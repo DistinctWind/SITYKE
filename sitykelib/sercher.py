@@ -23,6 +23,8 @@ def search_ppt_with_args(folder, args):
     for file in files:
         if not file.endswith(('.ppt', '.pptx')):
             continue
+        if file.startswith('~$'):
+            continue
         if args.ignore_translated_files and os.path.isfile(perfix(file)+'.pdf'):
             print('[Ignored]'+file)
             continue
@@ -36,6 +38,8 @@ def search_doc_with_args(folder, args):
     print('Searching for .doc(x) files...')
     for file in files:
         if not file.endswith(('.doc', '.docx')):
+            continue
+        if file.startswith('~$'):
             continue
         if args.ignore_translated_files and os.path.isfile(perfix(file)+'.pdf'):
             print('[Ignored]'+file)
