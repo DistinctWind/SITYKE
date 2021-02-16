@@ -8,8 +8,7 @@ args = start_argparse()
 def main():
     outputFiles = []
 
-    pptfiles = search_ppt(cwd)
-    show_ppt_list(pptfiles)
+    pptfiles = search_ppt_with_args(cwd, args)
     if pptfiles!=[]:
         powerpoint = init_powerpoint()
         for pptfile in tqdm(pptfiles, ncols=50):
@@ -23,8 +22,7 @@ def main():
             outputFiles.append(outputFilePath)
             ppt2pdf(powerpoint, inputFilePath, outputFilePath)
 
-    docfiles = search_doc(cwd)
-    show_word_list(docfiles)
+    docfiles = search_doc_with_args(cwd, args)
     if docfiles!=[]:
         word = init_word()
         for docfile in tqdm(docfiles, ncols=50):

@@ -8,6 +8,8 @@ def start_argparse():
 
     parser.add_argument('-d', '--delete_output_files', action='store_true',
     help = 'Delete all the output files after the program ends')
+    parser.add_argument('-i', '--ignore_translated_files', action='store_true',
+    help = 'Ignore all translated files')
     parser.add_argument('-c', '--cover_generated_files', action='store_true',
     help = 'Cover all generated outputfiles')
 
