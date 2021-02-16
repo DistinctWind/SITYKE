@@ -11,6 +11,10 @@ def start_argparse():
     help = 'Enable modification of output pdf with k2pdfopt')
     parser.add_argument('-c', '--cut_ppt', action='store_true',
     help = 'Cut the ppt files to fit the screen')
+    parser.add_argument('-r', '--reform_doc', action='store_true',
+    help = 'Reform doc files to fit the screen')
+    parser.add_argument('-dm', '--dark_mode', action='store_true',
+    help = 'Enable dark mode for devices that do not support it forcely')
 
     args = parser.parse_args()
 

@@ -39,6 +39,8 @@ def main():
         assert(os.path.isfile('k2pdfopt.exe'))
         if args.cut_ppt:
             pptfiles = cut_ppt(pptfiles)
+        if args.reform_doc:
+            docfiles = reform_doc(docfiles)
 
     kindles = list_kindle()
     show_kindle_list(kindles)
