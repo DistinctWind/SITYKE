@@ -41,6 +41,8 @@ def main():
             pptfiles = cut_ppt(pptfiles)
         if args.reform_doc:
             docfiles = reform_doc(docfiles)
+        if args.dark_mode:
+            dark_mode(pptfiles+docfiles)
 
     kindles = list_kindle()
     show_kindle_list(kindles)
