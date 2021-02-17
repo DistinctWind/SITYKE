@@ -36,12 +36,16 @@ def main():
             outputFiles.append(outputFilePath)
             doc2pdf(word, inputFilePath, outputFilePath)
 
+    pdfFiles = search_pdf(cwd)
+
     if args.modify_pdf:
         assert(os.path.isfile('k2pdfopt.exe'))
         if args.cut_ppt:
             modifiedFiles.extend(cut_ppt(pptfiles))
         if args.reform_doc:
             modifiedFiles.extend(reform_doc(docfiles))
+        if args.reform_all_pdf:
+            modifiedFiles.extend(reform_doc(pdfFiles))
         if args.dark_mode:
             modifiedFiles.extend(dark_mode(modifiedFiles))
 

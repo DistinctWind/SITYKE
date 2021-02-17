@@ -16,6 +16,11 @@ def search_doc(folder):
     docfiles = [f for f in files if f.endswith((".doc", ".docx")) and not f.startswith("~$")]
     return docfiles
 
+def search_pdf(folder):
+    files = os.listdir(folder)
+    pdffiles = [f for f in files if f.endswith('.pdf')]
+    return pdffiles
+
 def search_ppt_with_args(folder, args):
     files = os.listdir(folder)
     pptfiles = list()
@@ -33,7 +38,7 @@ def search_ppt_with_args(folder, args):
     return pptfiles
         
 def search_doc_with_args(folder, args):
-    files = os.listdir()
+    files = os.listdir(folder)
     docfiles = list()
     print('Searching for .doc(x) files...')
     for file in files:
