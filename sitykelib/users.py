@@ -17,9 +17,11 @@ def show_word_list(word_list):
         print(word_file_name)
 
 def show_kindle_list(kindles):
-    print("文件将复制到kindle: ", end='')
-    for kindle in kindles:
-        print(kindle.rstrip(":\\"), end='|')
+    print("Send to Kindles: ", end='')
+    for i in range(0, len(kindles)):
+        print(kindles[i].rstrip(':\\'), end='')
+        if i != len(kindles)-1:
+            print('|', end='')
     print('\n')
 
 def delete_files(outputFiles):

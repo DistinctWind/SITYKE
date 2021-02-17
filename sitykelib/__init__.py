@@ -43,7 +43,7 @@ def main():
         if args.reform_doc:
             modifiedFiles.extend(reform_doc(docfiles))
         if args.dark_mode:
-            modifiedFiles.extend(dark_mode(pptfiles+docfiles))
+            modifiedFiles.extend(dark_mode(modifiedFiles))
 
     kindles = list_kindle()
     show_kindle_list(kindles)
